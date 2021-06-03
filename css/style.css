@@ -162,6 +162,7 @@ a {
 
 .products {
   margin-bottom: 95px;
+  z-index: 1;
 }
 
 .center {
@@ -480,25 +481,77 @@ a {
   padding: 50px 15px 60px 15px;
 }
 
-.filter__btn {
+.details > summary {
+  list-style: none;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 11px;
+  color: #6f6e6e;
+}
+
+.details[open] > summary,
+.details > summary:hover {
+  color: #ef5b70;
+}
+
+.details--filter {
+  position: relative;
+  width: 360px;
+  background-color: #fff;
+  cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
   color: #000;
   font-size: 14px;
 }
 
-.filter__btn:hover,
-.filter__btn:active {
-  color: #f16d7f;
+.details--filter > summary {
 }
 
-.filter__btn svg {
+.details--filter svg {
+  fill: #6f6e6e;
   margin-left: 5px;
 }
 
-.filter__btn:hover svg,
-.filter__btn:active svg {
+.details--filter:hover svg,
+.details--filter[open] svg {
   fill: #f16d7f;
+}
+
+.details__content {
+  width: 360px;
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  padding: 16px;
+  z-index: 2;
+}
+
+.details__category > summary,
+.details__brand > summary {
+  margin-bottom: 18px;
+}
+
+.details__category > summary,
+.details__brand > summary,
+.details__designer > summary {
+  border-left: 5px solid #ef5b70;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.category__list {
+  list-style-type: none;
+  margin: 24px 0;
+  padding-left: 12px;
+}
+
+.category__list__item {
+  margin: 11px;
+}
+
+.category__link,
+.category__link:visited {
+  color: #6f6e6e;
 }
 
 .sorting__list {
@@ -507,24 +560,42 @@ a {
   gap: 30px;
 }
 
-.sorting__list__item a {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  color: #6f6e6e;
-  font-size: 14px;
+.sorting__list__item details {
+  position: relative;
 }
 
-.sorting__list__item a:hover {
-  color: #f16d7f;
-}
-
-.sorting__list__item svg {
+.sorting__list__item i {
   margin: 0 10px;
 }
 
 .sorting__list__item::before {
   content: '';
+}
+
+.size__content {
+  position: absolute;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  background: #ffffff;
+  padding: 7px 9px;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+
+.size__item {
+  display: flex;
+  align-items: center;
+}
+
+.size__item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.size__item label {
+  margin-left: 9px;
+  color: #6f6e6e;
 }
 
 .pagination {
