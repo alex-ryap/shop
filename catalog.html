@@ -65,9 +65,9 @@
       <section class="filter">
         <div class="container">
           <div class="filter__content">
-            <div class="filter__btn">
-              <a href="#" class="filter__btn">
-                filter
+            <details class="details details--filter">
+              <summary>
+                FILTER
                 <svg
                   width="15"
                   height="10"
@@ -78,30 +78,100 @@
                     d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
                   />
                 </svg>
-              </a>
-            </div>
+              </summary>
+              <div class="details__content">
+                <details class="details details__category details--active" open>
+                  <summary>Category</summary>
+                  <ul class="category__list">
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Accessories</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Bags</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Denim</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Hoodies & Sweatshirts</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Jackets & Coats</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Polos</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Shirts</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Shoes</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Sweaters & Knits</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">T-Shirts</a>
+                    </li>
+                    <li class="category__list__item">
+                      <a href="#" class="category__link">Tanks</a>
+                    </li>
+                  </ul>
+                </details>
+                <details class="details details__brand">
+                  <summary>Brand</summary>
+                </details>
+                <details class="details details__designer">
+                  <summary>Designer</summary>
+                </details>
+              </div>
+            </details>
             <ul class="sorting__list">
               <li class="sorting__list__item">
-                <a href="#"
-                  >TRENDING NOW
+                <details class="details">
+                  <summary>TRENDING NOW
                   <i class="fas fa-chevron-down"></i>
-                </a>
+                </summary>
+              </details>
               </li>
               <li class="sorting__list__item">
-                <a href="#"
-                  >SIZE
-                  <i class="fas fa-chevron-down"></i>
-                </a>
+                <details class="details">
+                  <summary>SIZE
+                    <i class="fas fa-chevron-down"></i>
+                  </summary>
+                  <div class="size__content">
+                    <div class="size__item">
+                      <input type="checkbox" id="size">
+                      <label for="#size">XS</label>
+                    </div>
+                    <div class="size__item">
+                      <input type="checkbox" id="size">
+                    <label for="#size">S</label>
+                  </div>
+                    
+                    <div class="size__item">
+                      <input type="checkbox" id="size">
+                    <label for="#size">M</label>
+                  </div>
+                    
+                    <div class="size__item">
+                      <input type="checkbox" id="size">
+                    <label for="#size">L</label>
+                  </div>
+                    
+                  </div>
+                </details>
               </li>
               <li class="sorting__list__item">
-                <a href="#"
-                  >PRICE
-                  <i class="fas fa-chevron-down"></i>
-                </a>
+                <details class="details">
+                  <summary>
+                    PRICE
+                    <i class="fas fa-chevron-down"></i>
+                  </summary>
+                </details>
               </li>
             </ul>
             <div class="empty"></div>
-          </div>
         </div>
       </section>
 
