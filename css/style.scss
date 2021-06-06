@@ -1,0 +1,42 @@
+// import abstract
+@import 'sass/abstract/vars';
+@import 'sass/abstract/mixins';
+
+// import base
+@import 'sass/base/reset';
+@import 'sass/base/fonts';
+@import 'sass/base/typography';
+
+// import layouts
+@import 'sass/layouts/header';
+@import 'sass/layouts/footer';
+
+// import pages
+@import 'sass/pages/index';
+@import 'sass/pages/catalog';
+@import 'sass/pages/product';
+@import 'sass/pages/cart';
+
+// import components
+@import 'sass/components/buttons';
+@import 'sass/components/breadcrump';
+@import 'sass/components/details';
+@import 'sass/components/input';
+@import 'sass/components/card';
+@import 'sass/components/carousel';
+@import 'sass/components/navigation';
+@import 'sass/components/pagination';
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.center {
+  @include dflex($direction: column, $align: center);
+}
