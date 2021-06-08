@@ -1,17 +1,15 @@
 .btn {
   cursor: pointer;
+  font-size: 16px;
   padding: 15px 40px;
   text-decoration: none;
-  border: none;
+  border: 1px solid transparent;
   transition: 0.5s all ease-in-out;
 
   &--products {
-    font-size: 16px;
     line-height: 19px;
     color: $mainColor;
     border: 1px solid #ff6a6a;
-    display: inline-flex;
-    align-items: center;
 
     &:hover {
       background-color: $mainColor;
@@ -21,11 +19,8 @@
   }
 
   &--subscribe {
-    height: 50px;
-    padding: 10px;
+    padding: 15px 20px;
     font-size: 14px;
-    line-height: 17px;
-    text-align: center;
     color: $colorWhite;
     background: $mainColor;
     border: 2px solid transparent;
@@ -38,26 +33,24 @@
     width: 32px;
     height: 32px;
     border: none;
-    color: #000;
+    color: $colorBlack;
     text-decoration: none;
-    background-color: #fff;
+    background-color: $colorWhite;
 
     &:hover {
-      background-color: #f16d7f;
-      color: #fff;
+      background-color: $mainColor;
+      color: $colorWhite;
     }
   }
 
   &--carousel {
     width: 47px;
     height: 47px;
-    color: #000;
+    color: $colorBlack;
     border: none;
     outline: none;
     background: rgba(42, 42, 42, 0.15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include dflex($align: center, $justify: center);
     font-size: 24px;
     position: absolute;
     top: 50%;
@@ -78,20 +71,41 @@
 
   &--cart {
     border: 1px solid #a4a4a4;
+
+    &:hover {
+      background-color: $mainColor;
+      color: $colorWhite;
+      border: 1px solid $mainColor;
+    }
   }
 
   &--color {
     font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
     background-color: $mainColor;
     color: $colorWhite;
-    border: 1px solid transparent;
 
     &:hover {
       background-color: $colorWhite;
       border: 1px solid $mainColor;
       color: $mainColor;
+    }
+  }
+
+  &--registration {
+    @include dflex($align: center, $justify: space-between);
+    position: relative;
+    width: 166px;
+    margin-top: 40px;
+    padding: 16px 30px;
+
+    & svg {
+      fill: $colorWhite;
+    }
+
+    &:hover {
+      background-color: $mainColor;
+      color: $colorWhite;
+      width: 180px;
     }
   }
 }

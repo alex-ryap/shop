@@ -48,6 +48,7 @@
     background-blend-mode: multiply;
     background-position: center;
     background-size: cover;
+    transition: 0.5s all;
 
     &:not(:last-child) {
       width: 360px;
@@ -57,6 +58,10 @@
     &:last-child {
       width: 100%;
       height: 180px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
 
     &--women {
@@ -128,6 +133,14 @@
   &__comment {
     width: 360px;
     @include dflex($direction: column, $align: center);
+
+    & img {
+      transition: 0.5s all;
+    }
+
+    & img:hover {
+      transform: rotate(180deg);
+    }
   }
 
   .text--subscribe {
@@ -137,6 +150,10 @@
   &__form {
     margin-right: 100px;
     @include dflex($direction: column, $align: center, $justify: center);
+
+    &__center {
+      @include dflex($align: stretch, $justify: center);
+    }
   }
 
   .title--form {

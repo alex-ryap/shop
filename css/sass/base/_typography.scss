@@ -39,6 +39,19 @@
     line-height: 29px;
     color: $mainColor;
   }
+
+  &--registration-form {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &--registration-title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: $colorBlack;
+  }
 }
 
 .subtitle {
@@ -83,5 +96,12 @@
 
   &--muted {
     color: $textMuted;
+  }
+
+  &--registration-text {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: $colorBlack;
   }
 }
