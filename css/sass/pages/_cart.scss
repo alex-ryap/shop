@@ -1,0 +1,86 @@
+.order {
+  &__content {
+    margin: 96px 0 128px 0;
+    @include dflex($justify: space-between);
+  }
+
+  &__products {
+    width: 650px;
+  }
+
+  &__cards {
+    @include dflex($direction: column, $gap: 40px);
+  }
+
+  &__buttons {
+    margin-top: 72px;
+    @include dflex($justify: space-between);
+  }
+}
+
+.address__info {
+  max-width: 360px;
+  @include dflex($direction: column, $gap: 20px);
+
+  & h3 {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: $titleColor;
+  }
+
+  & input {
+    padding: 17px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: $titleColor;
+    border: 1px solid #a4a4a4;
+  }
+
+  .btn {
+    max-width: 110px;
+    display: inline;
+    padding: 12px 15px;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+    color: #4a4a4a;
+  }
+}
+
+.order__price {
+  margin-top: 57px;
+  padding: 40px 44px;
+  background: #f5f3f3;
+}
+
+.price__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.price__info span {
+  margin-left: 20px;
+}
+
+.subtotal__price {
+  font-size: 11px;
+  line-height: 13px;
+  color: #4a4a4a;
+  margin-bottom: 12px;
+}
+
+.grandtotal__price {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #222222;
+  margin-bottom: 21px;
+}
+
+.order__price .btn {
+  margin-top: 17px;
+}

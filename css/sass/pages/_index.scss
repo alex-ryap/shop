@@ -1,0 +1,158 @@
+.top {
+  height: 764px;
+  background-color: $bgTopColor;
+
+  &__wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url('../img/bgtop.png');
+    background-repeat: no-repeat;
+    background-position: -230px center;
+  }
+
+  &__text {
+    width: 405px;
+    margin-right: 95px;
+  }
+
+  .title--top {
+    padding-left: 16px;
+    border-left: 12px solid $mainColor;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .text--bold {
+    font-size: 48px;
+    line-height: 58px;
+    color: #222222;
+  }
+
+  span.text--color {
+    font-size: 32px;
+  }
+}
+
+.offer {
+  margin: 65px 0 95px 0;
+
+  &__group {
+    @include dflex($wrap: wrap, $gap: 30px);
+  }
+
+  &__item {
+    @include dflex($align: center, $justify: center);
+    cursor: pointer;
+    background-color: #5d5d5d;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+
+    &:not(:last-child) {
+      width: 360px;
+      height: 260px;
+    }
+
+    &:last-child {
+      width: 100%;
+      height: 180px;
+    }
+
+    &--women {
+      background-image: url('../img/offer-women.png');
+    }
+
+    &--men {
+      background-image: url('../img/offer-men.png');
+    }
+
+    &--kids {
+      background-image: url('../img/offer-kids.png');
+    }
+
+    &--accessories {
+      background-image: url('../img/offer-accessories.png');
+    }
+
+    .title--offer span {
+      font-size: 24px;
+      font-weight: 700;
+      display: block;
+    }
+  }
+}
+
+.products {
+  margin-bottom: 95px;
+  z-index: 1;
+
+  .title {
+    margin-bottom: 6px;
+  }
+
+  .product__cards {
+    margin: 48px 0;
+    @include dflex($wrap: wrap, $gap: 30px);
+  }
+}
+
+.feature {
+  background-color: $bgFeatureColor;
+
+  &__wrap {
+    @include dflex($justify: space-around);
+  }
+
+  &__item {
+    width: 360px;
+    height: 134px;
+    margin: 103px 0;
+    text-align: center;
+
+    .title--feature {
+      margin: 28px 0 16px 0;
+    }
+  }
+}
+
+.subscribe {
+  background-image: url('../img/bgsubscribe.jpg');
+  background-size: cover;
+
+  &__wrap {
+    height: 450px;
+    @include dflex($align: center, $justify: space-between);
+  }
+
+  &__comment {
+    width: 360px;
+    @include dflex($direction: column, $align: center);
+  }
+
+  .text--subscribe {
+    margin-top: 30px;
+  }
+
+  &__form {
+    margin-right: 100px;
+    @include dflex($direction: column, $align: center, $justify: center);
+  }
+
+  .title--form {
+    margin-bottom: 39px;
+
+    & span {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      color: $titleColor;
+    }
+  }
+
+  .input:focus,
+  .btn--subscribe:focus {
+    outline: none;
+    border: 2px solid hsl(352, 83%, 69%);
+  }
+}

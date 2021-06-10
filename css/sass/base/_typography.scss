@@ -1,0 +1,87 @@
+.title {
+  font-size: 30px;
+  line-height: 36px;
+  color: $titleColor;
+
+  &--top {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+
+  &--offer {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: $colorWhite;
+  }
+
+  &--card-vertical {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &--feature {
+    font-size: 20px;
+    line-height: 24px;
+    color: $titleFeature;
+  }
+
+  &--form {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  &--navigate {
+    font-size: 24px;
+    line-height: 29px;
+    color: $mainColor;
+  }
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 17px;
+  color: $subTitleColor;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  color: $textColor;
+
+  &--bold {
+    font-weight: 900;
+  }
+
+  &--color {
+    color: $mainColor;
+  }
+
+  &--card-vertical {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $textCardVerticaly;
+  }
+
+  &--feature {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $textFeature;
+  }
+
+  &--subscribe {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: $textSubscribe;
+  }
+
+  &--muted {
+    color: $textMuted;
+  }
+}

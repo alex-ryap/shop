@@ -1,0 +1,132 @@
+.card {
+  cursor: pointer;
+  width: 360px;
+  background-color: $bgCardColor;
+
+  &--vertical {
+    .image {
+      position: relative;
+      width: 360px;
+      height: 420px;
+    }
+
+    .card__overlay {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      @include dflex($align: center, $justify: center);
+      background: rgba(58, 56, 56, 0.86);
+      transition: 0.5s opacity ease-in-out;
+
+      & button {
+        background: transparent;
+        border: 1px solid #fff;
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+
+        &:hover {
+          border-color: $mainColor;
+        }
+      }
+
+      & p {
+        color: $colorWhite;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+
+  &:hover .card__overlay {
+    opacity: 1;
+  }
+
+  &__body {
+    margin: 25px 0 20px 16px;
+    text-align: start;
+  }
+
+  .title--card-vertical {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .text--card-vertical {
+    margin-bottom: 18px;
+  }
+
+  .price {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &--horizontal {
+    cursor: default;
+    width: 100%;
+    background-color: $colorWhite;
+    display: flex;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+
+    .card__left img {
+      height: 100%;
+    }
+
+    .card__right {
+      padding-top: 22px;
+      padding-left: 31px;
+      width: 100%;
+      @include dflex($justify: space-between);
+    }
+
+    .product__info {
+      width: 250px;
+    }
+
+    .product__name {
+      width: 200px;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 29px;
+      color: #222222;
+      margin-bottom: 41px;
+    }
+
+    .product__info p {
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 26px;
+      color: #575757;
+    }
+
+    .product__info p:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    .product__info input {
+      margin-left: 24px;
+      width: 44px;
+      padding: 0 15px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      color: #656565;
+    }
+
+    .card__right a {
+      width: 18px;
+      height: 18px;
+      margin-top: 6px;
+      margin-right: 22px;
+    }
+
+    .card__right svg {
+      fill: #575757;
+    }
+  }
+}

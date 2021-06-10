@@ -1,0 +1,8 @@
+.carousel {
+  position: relative;
+  background: $bgCarousel;
+
+  &__image {
+    @include dflex($justify: center);
+  }
+}
