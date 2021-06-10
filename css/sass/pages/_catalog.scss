@@ -20,6 +20,8 @@
     list-style-type: none;
     @include dflex($gap: 30px);
     &__item {
+      cursor: pointer;
+
       & details {
         position: relative;
       }

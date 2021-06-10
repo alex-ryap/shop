@@ -71,7 +71,12 @@
                       <p>Size: Xl</p>
                       <p>
                         Quantity:
-                        <input type="text" value="2" name="quantity" />
+                        <input
+                          class="input input--number"
+                          type="number"
+                          value="2"
+                          name="quantity"
+                        />
                       </p>
                     </div>
                     <a href="#"
@@ -100,7 +105,12 @@
                       <p>Size: Xl</p>
                       <p>
                         Quantity:
-                        <input type="text" value="2" name="quantity" />
+                        <input
+                          class="input input--number"
+                          type="number"
+                          value="2"
+                          name="quantity"
+                        />
                       </p>
                     </div>
                     <a href="#"
@@ -127,12 +137,20 @@
               <div class="address__info">
                 <h3>SHIPPING ADDRESS</h3>
                 <input
-                  class="text text--muted"
+                  class="input input--form text text--muted"
                   type="text"
                   placeholder="Bangladesh"
                 />
-                <input type="text" placeholder="State" />
-                <input type="text" placeholder="Postcode / Zip" />
+                <input
+                  class="input input--form"
+                  type="text"
+                  placeholder="State"
+                />
+                <input
+                  class="input input--form"
+                  type="text"
+                  placeholder="Postcode / Zip"
+                />
                 <button class="btn btn--cart">GET A QUOTE</button>
               </div>
               <div class="order__price">
@@ -164,14 +182,16 @@
                 SUBSCRIBE<br />
                 <span>FOR OUR NEWLETTER AND PROMOTION</span>
               </h3>
-              <input
-                class="input input--rounded"
-                type="email"
-                placeholder="Enter Your Email"
-                required
-              /><button class="btn btn--subscribe" type="submit">
-                Subscribe
-              </button>
+              <div class="subscribe__form__center">
+                <input
+                  class="input input--subscribe"
+                  type="email"
+                  placeholder="Enter Your Email"
+                  required
+                /><button class="btn btn--subscribe" type="submit">
+                  Subscribe
+                </button>
+              </div>
             </form>
           </div>
         </div>
