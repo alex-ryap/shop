@@ -14,11 +14,11 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="navigation">
+        <div class="navigation header__navigation">
           <div class="navigation__left">
-            <a href="#">
+            <a href="index.html">
               <img
-                class="logo"
+                class="logo navigation__logo"
                 src="img/logo.png"
                 width="44"
                 height="38"
@@ -36,7 +36,7 @@
             <a class="navigation__item" href="#">
               <img src="img/account.svg" width="29" height="29" alt="account" />
             </a>
-            <a class="navigation__item cart" href="#">
+            <a class="navigation__item navigation__item_cart" href="#">
               <img src="img/cart.svg" width="32" height="29" alt="cart" />
               <span class="badge">5</span>
             </a>
@@ -47,169 +47,175 @@
 
     <main>
       <section class="navigate">
-        <div class="container">
-          <div class="navigate__content">
-            <h2 class="title title--navigate">REGISTRATION</h2>
+        <div class="navigate__inner">
+          <div class="container">
+            <div class="navigate__content">
+              <h2 class="title navigate__title">REGISTRATION</h2>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="registration">
-        <div class="container">
-          <div class="registration__wrap">
-            <form class="registration__form">
-              <div class="block__form">
-                <h3 class="title title--registration-form">Your Name</h3>
-                <input
-                  class="input input--form"
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Fist Name"
-                />
-                <input
-                  class="input input--form"
-                  type="text"
-                  name="surname"
-                  id="surname"
-                  placeholder="Last Name"
-                />
-              </div>
-
-              <div class="gender">
-                <div class="gender__item">
-                  <input type="radio" name="male" id="male" />
-                  <label for="male">Male</label>
-                </div>
-                <div class="gender__item">
-                  <input type="radio" name="male" id="female" />
-                  <label for="female">Female</label>
-                </div>
-              </div>
-
-              <div class="block__form">
-                <h3 class="title title--registration-form">Login details</h3>
-                <input
-                  class="input input--form"
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                />
-                <input
-                  class="input input--form"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                />
-              </div>
-
-              <p class="text text--muted">
-                Please use 8 or more characters, with at least 1 number and a
-                mixture of uppercase and lowercase letters
-              </p>
-              <button type="submit" class="btn btn--color btn--registration">
-                JOIN NOW
-                <svg
-                  width="17"
-                  height="10"
-                  viewBox="0 0 17 10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.54 0.208095C11.6058 0.142131 11.684 0.0897967 11.77 0.0540883C11.8561 0.01838 11.9483 0 12.0415 0C12.1347 0 12.2269 0.01838 12.313 0.0540883C12.399 0.0897967 12.4772 0.142131 12.543 0.208095L16.7929 4.458C16.8589 4.5238 16.9112 4.60196 16.9469 4.68802C16.9826 4.77407 17.001 4.86632 17.001 4.95949C17.001 5.05266 16.9826 5.14491 16.9469 5.23097C16.9112 5.31702 16.8589 5.39518 16.7929 5.46098L12.543 9.71089C12.41 9.84389 12.2296 9.91861 12.0415 9.91861C11.8534 9.91861 11.673 9.84389 11.54 9.71089C11.407 9.57788 11.3323 9.39749 11.3323 9.2094C11.3323 9.0213 11.407 8.84091 11.54 8.70791L15.2898 4.95949L11.54 1.21107C11.474 1.14528 11.4217 1.06711 11.386 0.981059C11.3503 0.895005 11.3319 0.802752 11.3319 0.709584C11.3319 0.616415 11.3503 0.524162 11.386 0.438109C11.4217 0.352055 11.474 0.273891 11.54 0.208095Z"
+        <div class="registration__inner">
+          <div class="container">
+            <div class="registration__content">
+              <form class="registration__form">
+                <div class="user__data">
+                  <h3>Your Name</h3>
+                  <input
+                    class="input registration__input"
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Fist Name"
                   />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 4.95948C0 4.77162 0.0746263 4.59146 0.207462 4.45862C0.340297 4.32579 0.52046 4.25116 0.708318 4.25116H15.583C15.7708 4.25116 15.951 4.32579 16.0838 4.45862C16.2167 4.59146 16.2913 4.77162 16.2913 4.95948C16.2913 5.14734 16.2167 5.3275 16.0838 5.46033C15.951 5.59317 15.7708 5.6678 15.583 5.6678H0.708318C0.52046 5.6678 0.340297 5.59317 0.207462 5.46033C0.0746263 5.3275 0 5.14734 0 4.95948Z"
+                  <input
+                    class="input registration__input"
+                    type="text"
+                    name="surname"
+                    id="surname"
+                    placeholder="Last Name"
                   />
-                </svg>
-              </button>
-            </form>
-            <div class="registration__text">
-              <h2 class="title title--registration-title">
-                LOYALTY HAS ITS PERKS
-              </h2>
-              <p class="text text--registration-text">
-                Get in on the loyalty program where you can earn points and
-                unlock serious perks. Starting with these as soon as you join:
-              </p>
-              <ul class="registration__list">
-                <li class="registration__item">
-                  <span>15% off welcome offer</span>
-                </li>
-                <li class="registration__item">
-                  <span> Free shipping, returns and exc</span>hanges on all
-                  orders
-                </li>
-                <li class="registration__item">
-                  <span> $10 off a purchase on your bir</span>thday
-                </li>
-                <li class="registration__item">
-                  <span>Early access to products</span>
-                </li>
-                <li class="registration__item">
-                  <span>Exclusive offers & rewards</span>
-                </li>
-              </ul>
+                </div>
+
+                <div class="gender">
+                  <div class="gender__item">
+                    <input type="radio" name="male" id="male" />
+                    <label for="male">Male</label>
+                  </div>
+                  <div class="gender__item">
+                    <input type="radio" name="male" id="female" />
+                    <label for="female">Female</label>
+                  </div>
+                </div>
+
+                <div class="user__data">
+                  <h3>Login details</h3>
+                  <input
+                    class="input registration__input"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                  <input
+                    class="input registration__input"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <p class="registration__help">
+                  Please use 8 or more characters, with at least 1 number and a
+                  mixture of uppercase and lowercase letters
+                </p>
+                <button type="submit" class="btn registration__btn">
+                  JOIN NOW
+                  <svg
+                    width="17"
+                    height="10"
+                    viewBox="0 0 17 10"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.54 0.208095C11.6058 0.142131 11.684 0.0897967 11.77 0.0540883C11.8561 0.01838 11.9483 0 12.0415 0C12.1347 0 12.2269 0.01838 12.313 0.0540883C12.399 0.0897967 12.4772 0.142131 12.543 0.208095L16.7929 4.458C16.8589 4.5238 16.9112 4.60196 16.9469 4.68802C16.9826 4.77407 17.001 4.86632 17.001 4.95949C17.001 5.05266 16.9826 5.14491 16.9469 5.23097C16.9112 5.31702 16.8589 5.39518 16.7929 5.46098L12.543 9.71089C12.41 9.84389 12.2296 9.91861 12.0415 9.91861C11.8534 9.91861 11.673 9.84389 11.54 9.71089C11.407 9.57788 11.3323 9.39749 11.3323 9.2094C11.3323 9.0213 11.407 8.84091 11.54 8.70791L15.2898 4.95949L11.54 1.21107C11.474 1.14528 11.4217 1.06711 11.386 0.981059C11.3503 0.895005 11.3319 0.802752 11.3319 0.709584C11.3319 0.616415 11.3503 0.524162 11.386 0.438109C11.4217 0.352055 11.474 0.273891 11.54 0.208095Z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 4.95948C0 4.77162 0.0746263 4.59146 0.207462 4.45862C0.340297 4.32579 0.52046 4.25116 0.708318 4.25116H15.583C15.7708 4.25116 15.951 4.32579 16.0838 4.45862C16.2167 4.59146 16.2913 4.77162 16.2913 4.95948C16.2913 5.14734 16.2167 5.3275 16.0838 5.46033C15.951 5.59317 15.7708 5.6678 15.583 5.6678H0.708318C0.52046 5.6678 0.340297 5.59317 0.207462 5.46033C0.0746263 5.3275 0 5.14734 0 4.95948Z"
+                    />
+                  </svg>
+                </button>
+              </form>
+              <div class="registration__desc">
+                <h2 class="title registration__title">LOYALTY HAS ITS PERKS</h2>
+                <p class="text registration__text">
+                  Get in on the loyalty program where you can earn points and
+                  unlock serious perks. Starting with these as soon as you join:
+                </p>
+                <ul class="registration__list">
+                  <li class="registration__item">
+                    <span>15% off welcome offer</span>
+                  </li>
+                  <li class="registration__item">
+                    <span> Free shipping, returns and exc</span>hanges on all
+                    orders
+                  </li>
+                  <li class="registration__item">
+                    <span> $10 off a purchase on your bir</span>thday
+                  </li>
+                  <li class="registration__item">
+                    <span>Early access to products</span>
+                  </li>
+                  <li class="registration__item">
+                    <span>Exclusive offers & rewards</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section class="subscribe">
-        <div class="container subscribe__wrap">
-          <div class="subscribe__comment">
-            <img src="img/subscribe-img.png" alt="avatar" />
-            <p class="text text--subscribe">
-              “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
-              <i>a pulvinar purus condimentum“</i>
-            </p>
-          </div>
-          <div class="subscribe__form">
-            <form action="#">
-              <h3 class="title title--form">
-                SUBSCRIBE<br />
-                <span>FOR OUR NEWLETTER AND PROMOTION</span>
-              </h3>
-              <div class="subscribe__form__center">
-                <input
-                  class="input input--subscribe"
-                  type="email"
-                  placeholder="Enter Your Email"
-                  required
-                /><button class="btn btn--subscribe" type="submit">
-                  Subscribe
-                </button>
+        <div class="subscribe__wrap">
+          <div class="container">
+            <div class="subscribe__content">
+              <div class="subscribe__comment">
+                <img src="img/subscribe-img.png" alt="avatar" />
+                <p class="text subscribe__text">
+                  “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                  <i>a pulvinar purus condimentum“</i>
+                </p>
               </div>
-            </form>
+              <div class="subscribe__form">
+                <form action="#">
+                  <h3 class="title subscribe__form__title">
+                    SUBSCRIBE<br />
+                    <span>FOR OUR NEWLETTER AND PROMOTION</span>
+                  </h3>
+                  <div class="subscribe__form__content">
+                    <input
+                      type="email"
+                      placeholder="Enter Your Email"
+                      required
+                    />
+                    <button class="btn" type="submit">Subscribe</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer__wrap">
-        <div class="copyright">
-          <p>&copy; 2021 Brand All Rights Reserved.</p>
-        </div>
-        <div class="social__media">
-          <button class="btn btn--social_media">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button class="btn btn--social_media">
-            <i class="fab fa-instagram"></i>
-          </button>
-          <button class="btn btn--social_media">
-            <i class="fab fa-pinterest-p"></i>
-          </button>
-          <button class="btn btn--social_media">
-            <i class="fab fa-twitter"></i>
-          </button>
+      <div class="footer__inner">
+        <div class="container footer__wrap">
+          <div class="copyright">
+            <p>&copy; 2021 Brand All Rights Reserved.</p>
+          </div>
+          <div class="social__media">
+            <button class="social__media__btn">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="social__media__btn">
+              <i class="fab fa-instagram"></i>
+            </button>
+            <button class="social__media__btn">
+              <i class="fab fa-pinterest-p"></i>
+            </button>
+            <button class="social__media__btn">
+              <i class="fab fa-twitter"></i>
+            </button>
+          </div>
         </div>
       </div>
     </footer>

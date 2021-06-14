@@ -1,14 +1,12 @@
 @mixin dflex(
-  $direction: 'row',
-  $align: 'flex-start',
-  $justify: 'flex-start',
-  $wrap: 'no-wrap',
-  $gap: 0px
+  $direction: row,
+  $align: flex-start,
+  $justify: flex-start,
+  $wrap: nowrap
 ) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
   flex-wrap: $wrap;
-  gap: $gap;
 }

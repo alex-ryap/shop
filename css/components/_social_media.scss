@@ -1,0 +1,24 @@
+.social__media {
+  margin: 24px 0;
+  @include dflex($align: center);
+
+  &__btn {
+    @include dflex($align: center, $justify: center);
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    color: $textBlack;
+    background-color: $textWhite;
+
+    &:hover {
+      background-color: $mainColor;
+      color: $textWhite;
+    }
+  }
+
+  &__btn:not(:last-child) {
+    margin-right: 8px;
+  }
+}

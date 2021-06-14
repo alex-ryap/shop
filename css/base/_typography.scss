@@ -1,0 +1,25 @@
+.title {
+  font-size: 30px;
+  line-height: 36px;
+  color: $textBlack;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 17px;
+  color: $productsSubTitle;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  color: $textBlack;
+
+  &_bold {
+    font-weight: 900;
+  }
+
+  &_color {
+    color: $mainColor;
+  }
+}
