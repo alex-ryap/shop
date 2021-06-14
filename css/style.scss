@@ -80,9 +80,9 @@ details {
     height: calc(100vh - 75px);
     @include dflex($align: center, $justify: flex-end);
     background-image: url('../img/bgtop.png');
-    object-fit: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: calc(-65% + 75px) bottom;
+    background-position: -100px bottom;
   }
 
   &__content {

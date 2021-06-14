@@ -508,10 +508,9 @@ details {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   background-image: url("../img/bgtop.png");
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: calc(-65% + 75px) bottom;
+  background-position: -100px bottom;
 }
 
 .top__content {
