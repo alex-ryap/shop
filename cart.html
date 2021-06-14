@@ -14,11 +14,11 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="navigation">
+        <div class="navigation header__navigation">
           <div class="navigation__left">
-            <a href="#">
+            <a href="index.html">
               <img
-                class="logo"
+                class="logo navigation__logo"
                 src="img/logo.png"
                 width="44"
                 height="38"
@@ -36,7 +36,7 @@
             <a class="navigation__item" href="#">
               <img src="img/account.svg" width="29" height="29" alt="account" />
             </a>
-            <a class="navigation__item cart" href="#">
+            <a class="navigation__item navigation__item_cart" href="#">
               <img src="img/cart.svg" width="32" height="29" alt="cart" />
               <span class="badge">5</span>
             </a>
@@ -47,36 +47,36 @@
 
     <main>
       <section class="navigate">
-        <div class="container">
-          <div class="navigate__content">
-            <h2 class="title title--navigate">SHOPPING CART</h2>
+        <div class="navigate__inner">
+          <div class="container">
+            <div class="navigate__content">
+              <h2 class="title navigate__title">SHOPPING CART</h2>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="order">
         <div class="container">
-          <div class="order__content">
+          <div class="order__inner">
             <div class="order__products">
               <div class="order__cards">
-                <div class="card card--horizontal">
+                <div class="card order__card">
                   <div class="card__left">
                     <img src="img/cart_img1.jpg" alt="product image" />
                   </div>
                   <div class="card__right">
-                    <div class="product__info">
-                      <h3 class="product__name">MANGO PEOPLE T-SHIRT</h3>
-                      <p>Price: <span class="text--color">$300</span></p>
+                    <div class="card__form">
+                      <h3>MANGO PEOPLE T-SHIRT</h3>
+                      <p>
+                        Price:
+                        <span class="card__price order__card__price">$300</span>
+                      </p>
                       <p>Color: Red</p>
                       <p>Size: Xl</p>
                       <p>
                         Quantity:
-                        <input
-                          class="input input--number"
-                          type="number"
-                          value="2"
-                          name="quantity"
-                        />
+                        <input type="number" value="2" name="quantity" />
                       </p>
                     </div>
                     <a href="#"
@@ -93,24 +93,22 @@
                     </a>
                   </div>
                 </div>
-                <div class="card card--horizontal">
+                <div class="card order__card">
                   <div class="card__left">
                     <img src="img/cart_img2.jpg" alt="product image" />
                   </div>
                   <div class="card__right">
-                    <div class="product__info">
-                      <h3 class="product__name">MANGO PEOPLE T-SHIRT</h3>
-                      <p>Price: <span class="text--color">$300</span></p>
+                    <div class="card__form">
+                      <h3>MANGO PEOPLE T-SHIRT</h3>
+                      <p>
+                        Price:
+                        <span class="card__price order__card__price">$300</span>
+                      </p>
                       <p>Color: Red</p>
                       <p>Size: Xl</p>
                       <p>
                         Quantity:
-                        <input
-                          class="input input--number"
-                          type="number"
-                          value="2"
-                          name="quantity"
-                        />
+                        <input type="number" value="2" name="quantity" />
                       </p>
                     </div>
                     <a href="#"
@@ -129,38 +127,36 @@
                 </div>
               </div>
               <div class="order__buttons">
-                <div class="btn btn--cart">CLEAR SHOPPING CART</div>
-                <div class="btn btn--cart">CONTINUE SHOPPING</div>
+                <div class="btn order__btn">CLEAR SHOPPING CART</div>
+                <div class="btn order__btn">CONTINUE SHOPPING</div>
               </div>
             </div>
-            <div class="order__address">
-              <div class="address__info">
+            <div class="order__shipping">
+              <form class="shipping__form">
                 <h3>SHIPPING ADDRESS</h3>
                 <input
-                  class="input input--form text text--muted"
+                  class="input shipping__input"
                   type="text"
                   placeholder="Bangladesh"
                 />
                 <input
-                  class="input input--form"
+                  class="input shipping__input"
                   type="text"
                   placeholder="State"
                 />
                 <input
-                  class="input input--form"
+                  class="input shipping__input"
                   type="text"
                   placeholder="Postcode / Zip"
                 />
-                <button class="btn btn--cart">GET A QUOTE</button>
-              </div>
+                <button class="btn shipping__btn">GET A QUOTE</button>
+              </form>
               <div class="order__price">
-                <div class="price__info">
-                  <p class="subtotal__price">SUB TOTAL <span>$900</span></p>
-                  <p class="grandtotal__price">
-                    GRAND TOTAL <span class="text--color">$900</span>
-                  </p>
+                <div class="price">
+                  <p class="price__subtotal">SUB TOTAL <span>$900</span></p>
+                  <p class="price__grandtotal">GRAND TOTAL <span>$900</span></p>
                 </div>
-                <button class="btn btn--color">PROCEED TO CHECKOUT</button>
+                <button class="btn price__btn">PROCEED TO CHECKOUT</button>
               </div>
             </div>
           </div>
@@ -168,54 +164,58 @@
       </section>
 
       <section class="subscribe">
-        <div class="container subscribe__wrap">
-          <div class="subscribe__comment">
-            <img src="img/subscribe-img.png" alt="avatar" />
-            <p class="text text--subscribe">
-              “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
-              <i>a pulvinar purus condimentum“</i>
-            </p>
-          </div>
-          <div class="subscribe__form">
-            <form action="#">
-              <h3 class="title title--form">
-                SUBSCRIBE<br />
-                <span>FOR OUR NEWLETTER AND PROMOTION</span>
-              </h3>
-              <div class="subscribe__form__center">
-                <input
-                  class="input input--subscribe"
-                  type="email"
-                  placeholder="Enter Your Email"
-                  required
-                /><button class="btn btn--subscribe" type="submit">
-                  Subscribe
-                </button>
+        <div class="subscribe__wrap">
+          <div class="container">
+            <div class="subscribe__content">
+              <div class="subscribe__comment">
+                <img src="img/subscribe-img.png" alt="avatar" />
+                <p class="text subscribe__text">
+                  “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                  <i>a pulvinar purus condimentum“</i>
+                </p>
               </div>
-            </form>
+              <div class="subscribe__form">
+                <form action="#">
+                  <h3 class="title subscribe__form__title">
+                    SUBSCRIBE<br />
+                    <span>FOR OUR NEWLETTER AND PROMOTION</span>
+                  </h3>
+                  <div class="subscribe__form__content">
+                    <input
+                      type="email"
+                      placeholder="Enter Your Email"
+                      required
+                    />
+                    <button class="btn" type="submit">Subscribe</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer__wrap">
-        <div class="copyright">
-          <p>&copy; 2021 Brand All Rights Reserved.</p>
-        </div>
-        <div class="social__media">
-          <button class="btn btn--social_media">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button class="btn btn--social_media">
-            <i class="fab fa-instagram"></i>
-          </button>
-          <button class="btn btn--social_media">
-            <i class="fab fa-pinterest-p"></i>
-          </button>
-          <button class="btn btn--social_media">
-            <i class="fab fa-twitter"></i>
-          </button>
+      <div class="footer__inner">
+        <div class="container footer__wrap">
+          <div class="copyright">
+            <p>&copy; 2021 Brand All Rights Reserved.</p>
+          </div>
+          <div class="social__media">
+            <button class="social__media__btn">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="social__media__btn">
+              <i class="fab fa-instagram"></i>
+            </button>
+            <button class="social__media__btn">
+              <i class="fab fa-pinterest-p"></i>
+            </button>
+            <button class="social__media__btn">
+              <i class="fab fa-twitter"></i>
+            </button>
+          </div>
         </div>
       </div>
     </footer>

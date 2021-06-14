@@ -1,0 +1,30 @@
+.breadcrump {
+  list-style-type: none;
+  @include dflex;
+
+  &__item {
+    & a {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      color: $textBreadcrump;
+      cursor: pointer;
+
+      &:hover {
+        color: $mainColor;
+      }
+
+      &_active {
+        color: $mainColor;
+      }
+    }
+
+    & span {
+      margin: 0 5px;
+    }
+
+    &:last-child a {
+      color: $mainColor;
+    }
+  }
+}

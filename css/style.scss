@@ -1,43 +1,974 @@
 // import abstract
-@import 'sass/abstract/vars';
-@import 'sass/abstract/mixins';
+@import 'abstract/vars';
+@import 'abstract/mixins';
 
 // import base
-@import 'sass/base/reset';
-@import 'sass/base/fonts';
-@import 'sass/base/typography';
-
-// import layouts
-@import 'sass/layouts/header';
-@import 'sass/layouts/footer';
-
-// import pages
-@import 'sass/pages/index';
-@import 'sass/pages/catalog';
-@import 'sass/pages/product';
-@import 'sass/pages/cart';
-@import 'sass/pages/registration';
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/container';
+@import 'base/typography';
 
 // import components
-@import 'sass/components/buttons';
-@import 'sass/components/breadcrump';
-@import 'sass/components/details';
-@import 'sass/components/input';
-@import 'sass/components/card';
-@import 'sass/components/carousel';
-@import 'sass/components/navigation';
-@import 'sass/components/pagination';
+@import 'components/button';
+@import 'components/input';
+@import 'components/card';
+@import 'components/breadcrumps';
+@import 'components/pagination';
+@import 'components/social_media';
 
 body {
   font-family: 'Lato', sans-serif;
 }
 
-.container {
-  max-width: 1140px;
-  width: 100%;
-  margin: 0 auto;
+details {
+  outline: none;
 }
 
-.center {
-  @include dflex($direction: column, $align: center);
+// index page
+.header {
+  background-color: $bgHeader;
+
+  &__navigation {
+    padding: 0 16px;
+  }
+
+  .navigation {
+    @include dflex($align: center, $justify: space-between);
+
+    &__left,
+    &__right {
+      @include dflex($align: center);
+    }
+
+    &__logo {
+      margin: 17px 41px 17px 0;
+    }
+
+    .logo {
+      width: 44px;
+      height: 38px;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 33px;
+    }
+
+    &__item_cart {
+      position: relative;
+
+      .badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        background-color: $mainColor;
+        color: $textWhite;
+        text-align: center;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.top {
+  min-height: calc(100vh - 75px);
+  background-color: $bgTop;
+  @include dflex;
+
+  &__container {
+    height: calc(100vh - 75px);
+    @include dflex($align: center, $justify: flex-end);
+    background-image: url('../img/bgtop.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -100px bottom;
+  }
+
+  &__content {
+    margin-right: 95px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    padding-left: 16px;
+    border-left: 12px solid $mainColor;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  &__text_bold {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 58px;
+    color: $topTitle;
+  }
+}
+
+.offer {
+  &__content {
+    margin: 65px 16px 95px 16px;
+  }
+
+  &__list {
+    @include dflex($justify: space-between, $wrap: wrap);
+  }
+
+  &__item {
+    @include dflex($align: center, $justify: center);
+    cursor: pointer;
+    background-color: $bgOfferItem;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s all;
+
+    &:not(:last-child) {
+      width: 31%;
+      height: 260px;
+    }
+
+    &:last-child {
+      margin-top: 30px;
+      width: 100%;
+      height: 180px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &_women {
+      background-image: url('../img/offer-women.png');
+    }
+
+    &_men {
+      background-image: url('../img/offer-men.png');
+    }
+
+    &_kids {
+      background-image: url('../img/offer-kids.png');
+    }
+
+    &_accessories {
+      background-image: url('../img/offer-accessories.png');
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: $textWhite;
+
+    & span {
+      font-size: 24px;
+      line-height: 29px;
+      font-weight: 700;
+      display: block;
+      color: $mainColor;
+    }
+  }
+}
+
+.products {
+  &__inner {
+    margin-bottom: 95px;
+    z-index: 1;
+  }
+
+  &__text {
+    @include dflex($direction: column, $align: center);
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+  }
+
+  &__content {
+    @include dflex($wrap: wrap, $justify: space-between);
+    margin-bottom: 48px;
+  }
+
+  &__buttons {
+    @include dflex($justify: center);
+  }
+
+  &__btn {
+    line-height: 19px;
+    color: $mainColor;
+    background-color: $textWhite;
+    border: 1px solid $mainColor;
+
+    &:hover {
+      background-color: $mainColor;
+      border: 1px solid $mainColor;
+      color: $textWhite;
+    }
+  }
+}
+
+.feature {
+  background-color: $bgFeature;
+
+  &__wrap {
+    @include dflex($justify: space-around);
+  }
+
+  &__item {
+    width: 360px;
+    height: 134px;
+    margin: 103px 0;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    color: $textFeature;
+    margin: 28px 0 16px 0;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $textFeature;
+  }
+}
+
+.subscribe {
+  &__wrap {
+    background-image: url('../img/bgsubscribe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    min-height: 450px;
+    @include dflex($align: center, $justify: space-between);
+  }
+
+  &__comment {
+    width: 360px;
+    @include dflex($direction: column, $align: center);
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: $textSubscribe;
+    margin-top: 30px;
+  }
+
+  &__form {
+    margin-right: 100px;
+    @include dflex($direction: column, $align: center, $justify: center);
+
+    &__title {
+      margin-bottom: 32px;
+      @include dflex($direction: column, $align: center);
+
+      & span {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: $textSubscribe;
+      }
+    }
+
+    &__content {
+      @include dflex($justify: center);
+
+      & input,
+      & button {
+        font-size: 14px;
+        line-height: 17px;
+        border: 1px solid transparent;
+      }
+
+      & input {
+        color: $textSubscribe;
+        opacity: 0.67;
+        width: 256px;
+        padding: 15px 20px;
+        border-radius: 30px 0 0 30px;
+      }
+
+      & button {
+        padding: 15px 20px;
+        color: $textWhite;
+        background: $mainColor;
+        border-radius: 0 30px 30px 0;
+      }
+
+      & input:focus,
+      & button:focus {
+        outline: none;
+        border: 1px solid $mainColor;
+      }
+    }
+  }
+}
+
+.footer {
+  &__inner {
+    background-color: $bgFooter;
+    color: $textWhite;
+  }
+
+  &__wrap {
+    @include dflex($align: center, $justify: space-between);
+  }
+}
+
+// catalog page
+
+.navigate {
+  &__inner {
+    background-color: $bgNavigate;
+  }
+
+  &__content {
+    @include dflex($align: center, $justify: space-between);
+  }
+
+  &__title {
+    padding: 60px 0;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: normal;
+    color: $mainColor;
+  }
+}
+
+.filter {
+  &__inner {
+    @include dflex($align: center);
+    padding: 50px 0 60px 0;
+  }
+
+  &__content {
+    height: 40px;
+    width: 360px;
+    position: relative;
+    @include dflex($align: center);
+  }
+
+  &__details {
+    cursor: pointer;
+    width: 360px;
+
+    &[open] {
+      position: absolute;
+      top: 0;
+      background-color: $bgDetails;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+      z-index: 2;
+
+      & > summary {
+        color: $mainColor;
+        & svg {
+          fill: $mainColor;
+        }
+      }
+    }
+
+    & > summary {
+      display: inline;
+      font-size: 14px;
+      line-height: 17px;
+
+      &:hover,
+      &:hover svg {
+        color: $mainColor;
+        fill: $mainColor;
+      }
+
+      & svg {
+        fill: $textDetails;
+        margin-left: 5px;
+      }
+    }
+
+    & summary {
+      list-style: none;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 11px;
+      color: $textDetails;
+    }
+
+    & summary::-webkit-details-marker {
+      display: none;
+      outline: none;
+    }
+
+    &__content {
+      padding: 16px;
+      z-index: 2;
+    }
+
+    &__item[open] > summary {
+      color: $mainColor;
+    }
+
+    &__item > summary {
+      text-transform: uppercase;
+      border-left: 5px solid $mainColor;
+      border-bottom: 1px solid $borderBottomDetails;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+
+    &__item:not(:last-child) > summary {
+      margin-bottom: 20px;
+    }
+  }
+
+  .category__list {
+    list-style-type: none;
+    margin: 24px 0;
+    padding-left: 12px;
+
+    &__item {
+      margin: 11px;
+
+      .category__link,
+      .category__link:visited {
+        color: $textDetails;
+      }
+
+      .category__link:hover {
+        color: $mainColor;
+      }
+    }
+  }
+
+  .sorting {
+    list-style-type: none;
+    margin-left: 30px;
+    @include dflex;
+
+    &__item {
+      cursor: pointer;
+
+      & i {
+        margin: 0 10px;
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 28px;
+    }
+
+    &__details {
+      position: relative;
+
+      & > summary {
+        font-size: 14px;
+        line-height: 17px;
+        color: $textDetails;
+        list-style: none;
+
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+
+    &__details > summary::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .size__content {
+    position: absolute;
+    top: 25px;
+    width: 80px;
+    @include dflex($direction: column, $justify: space-between);
+    z-index: 2;
+    background: $textWhite;
+    padding: 7px 9px;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+
+    .size__item {
+      @include dflex($align: center);
+
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+
+      & input {
+        margin-right: 9px;
+      }
+
+      & p {
+        color: $textDetails;
+      }
+    }
+  }
+}
+
+.products {
+  &__pagination {
+    @include dflex($justify: center);
+    margin-bottom: 96px;
+  }
+}
+
+// product page
+
+.carousel {
+  position: relative;
+  background: $bgCarousel;
+
+  &__image {
+    @include dflex($justify: center);
+  }
+
+  &__btn {
+    width: 47px;
+    height: 47px;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: rgba(42, 42, 42, 0.15);
+    @include dflex($align: center, $justify: center);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      color: $mainColor;
+    }
+
+    &_prev {
+      left: 0;
+    }
+
+    &_next {
+      right: 0;
+    }
+  }
+}
+
+.desc {
+  &__wrap {
+    background-color: $bgDesc;
+    position: relative;
+    margin-top: -50px;
+    padding: 65px 0;
+    border: 1px solid $borderDesc;
+    @include dflex($direction: column, $align: center);
+    text-align: center;
+  }
+
+  &__content {
+    padding-bottom: 65px;
+    width: 640px;
+    border-bottom: 1px solid $borderDesc;
+    @include dflex($direction: column, $align: center);
+
+    & .collection {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      color: $mainColor;
+    }
+
+    & > hr {
+      margin: 12px 0;
+      width: 63px;
+      border: none;
+      height: 3px;
+      background: $mainColor;
+    }
+
+    & .name {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 22px;
+      color: $textDescName;
+      margin-bottom: 48px;
+    }
+
+    & .description {
+      width: 555px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      color: $textDescDescription;
+      margin-bottom: 32px;
+    }
+
+    & .price {
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 29px;
+      color: $mainColor;
+    }
+  }
+
+  & .settings {
+    margin: 65px 0 48px 0;
+    list-style-type: none;
+    @include dflex($justify: center);
+
+    &__item {
+      & a {
+        cursor: pointer;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: $textDescDescription;
+        @include dflex($align: center);
+
+        &:hover {
+          color: $mainColor;
+        }
+      }
+
+      & i {
+        margin: 0 10px;
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__btn {
+    line-height: 19px;
+    color: $mainColor;
+    border: 1px solid $mainColor;
+    @include dflex($align: center);
+
+    & svg {
+      margin-right: 23px;
+      fill: $mainColor;
+      transition: 0.5s all;
+    }
+
+    &:hover {
+      background-color: $mainColor;
+      border: 1px solid $mainColor;
+      color: $textWhite;
+    }
+
+    &:hover svg {
+      fill: $textWhite;
+    }
+  }
+}
+
+.products {
+  &__inner_margin {
+    margin: 128px 0;
+  }
+}
+
+// cart page
+
+.order {
+  &__inner {
+    margin: 96px 0 128px 0;
+    @include dflex($justify: space-between);
+  }
+
+  &__products {
+    width: 650px;
+  }
+
+  &__cards {
+    @include dflex($direction: column);
+  }
+
+  &__card {
+    cursor: default;
+    width: 100%;
+    background-color: $textWhite;
+    @include dflex;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+
+    &__price {
+      font-size: 22px;
+      line-height: 26px;
+    }
+  }
+
+  &__card:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__buttons {
+    margin-top: 72px;
+    @include dflex($justify: space-between);
+  }
+
+  &__btn {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $textBlack;
+    border: 1px solid $borderOrderButton;
+
+    &:hover {
+      color: $mainColor;
+      border-color: $mainColor;
+    }
+  }
+
+  &__shipping {
+    & .shipping__form {
+      width: 360px;
+      @include dflex($direction: column);
+    }
+
+    & h3 {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: $topTitle;
+      margin-bottom: 20px;
+    }
+
+    & .shipping__input {
+      width: 100%;
+      padding: 17px;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      background-color: $textWhite;
+      color: $topTitle;
+      border: 1px solid $borderOrderInput;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+        border: 1px solid $mainColor;
+      }
+    }
+
+    & .shipping__input:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    & .shipping__btn {
+      border: 1px solid $borderOrderButton;
+      background-color: $textWhite;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 13px;
+      color: $borderOrderButton;
+
+      &:hover {
+        border-color: $mainColor;
+        color: $mainColor;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: 57px;
+    padding: 40px 44px;
+    background: $bgOrderPrice;
+
+    & .price {
+      @include dflex($direction: column, $align: flex-end);
+      border-bottom: 1px solid $borderOrderPrice;
+
+      &__subtotal {
+        font-size: 11px;
+        line-height: 13px;
+        color: $textOrderPrice;
+        margin-bottom: 12px;
+      }
+
+      & span {
+        margin-left: 20px;
+      }
+
+      &__grandtotal {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: $topTitle;
+        margin-bottom: 21px;
+
+        & span {
+          font-weight: 700;
+          color: $mainColor;
+        }
+      }
+
+      &__btn {
+        margin-top: 17px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: $textWhite;
+        background-color: $mainColor;
+
+        &:hover {
+          color: $mainColor;
+          background-color: transparent;
+          border: 1px solid $mainColor;
+        }
+      }
+    }
+  }
+}
+
+// registration page
+
+.registration {
+  &__inner {
+    margin: 64px 0 96px 0;
+  }
+
+  &__content {
+    @include dflex($justify: space-between);
+  }
+
+  &__form {
+    width: 360px;
+    @include dflex($direction: column);
+
+    & .user__data {
+      width: 100%;
+      @include dflex($direction: column);
+      margin-bottom: 15px;
+
+      & h3 {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: $topTitle;
+        margin-bottom: 20px;
+      }
+    }
+
+    & .gender {
+      margin: 32px 0;
+      @include dflex;
+
+      &__item {
+        @include dflex($align: center);
+
+        & input {
+          width: 17px;
+          height: 17px;
+          margin-right: 10px;
+        }
+
+        & label {
+          font-weight: 300;
+          font-size: 11px;
+          line-height: 13px;
+        }
+      }
+
+      &__item:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 17px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    background-color: $textWhite;
+    color: $textInput;
+    border: 1px solid #a19595;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      border: 1px solid $mainColor;
+    }
+  }
+
+  &__input:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__help {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: $textInput;
+    margin-bottom: 44px;
+  }
+
+  &__btn {
+    @include dflex($align: center, $justify: space-between);
+    position: relative;
+    width: 166px;
+    padding: 16px 30px;
+    background-color: $mainColor;
+    color: $textWhite;
+
+    & svg {
+      fill: $textWhite;
+    }
+
+    &:hover {
+      width: 180px;
+    }
+  }
+
+  &__desc {
+    width: 650px;
+  }
+
+  &__desc,
+  &__title,
+  &__text {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__title,
+  &__text {
+    margin-bottom: 22px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__list {
+    @include dflex($direction: column);
+    list-style-position: inside;
+    list-style-image: url('../../../img/registration_check.svg');
+  }
+
+  &__item {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    & span {
+      padding-left: 23px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }

@@ -1,0 +1,163 @@
+.card {
+  cursor: pointer;
+  width: 360px;
+  background-color: $bgCard;
+
+  &_vertical {
+    margin-bottom: 30px;
+
+    &:hover .card__overlay {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 360px;
+    height: 420px;
+  }
+
+  &__overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @include dflex($align: center, $justify: center);
+    background: rgba(58, 56, 56, 0.86);
+    transition: 0.5s opacity ease-in-out;
+
+    & button {
+      background: transparent;
+      border: 1px solid #fff;
+      padding: 10px 14px;
+      @include dflex($align: center);
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 17px;
+      color: $textWhite;
+      transition: 0.3s all;
+
+      & img {
+        margin-right: 12px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__body {
+    margin: 25px 0 20px 16px;
+    text-align: start;
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin-bottom: 18px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $textCard;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 19px;
+    color: $mainColor;
+  }
+
+  &__left {
+    height: 306px;
+
+    & img {
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+    }
+  }
+
+  &__right {
+    padding-top: 22px;
+    padding-left: 31px;
+    width: 100%;
+    @include dflex($justify: space-between);
+
+    & a {
+      width: 18px;
+      height: 18px;
+      margin-top: 6px;
+      margin-right: 22px;
+    }
+
+    & svg {
+      fill: $textOrderCard;
+      transition: 0.5s fill;
+    }
+
+    & a:hover svg {
+      fill: $mainColor;
+    }
+  }
+
+  &__form {
+    width: 250px;
+
+    & h3 {
+      width: 200px;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 29px;
+      color: $textSubscribe;
+      margin-bottom: 41px;
+    }
+
+    & p {
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 26px;
+      color: $textOrderCard;
+    }
+
+    & p:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    & input {
+      margin-left: 24px;
+      width: 44px;
+      padding: 0 15px;
+      font-size: 18px;
+      line-height: 22px;
+      background-color: #fff;
+      color: $textOrderCard;
+      border: 1px solid #a4a4a4;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+        border: 1px solid $mainColor;
+      }
+
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.pagination {
+  &__list {
+    padding: 15px;
+    border: 1px solid $borderPagination;
+    list-style-type: none;
+    display: inline-flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 18px;
+  }
+
+  &__link {
+    color: $textPagination;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+
+    &_active,
+    &:hover {
+      color: $mainColor;
+    }
+
+    &_prev,
+    &_next {
+      font-weight: 700;
+      color: $textBlack;
+    }
+  }
+}
