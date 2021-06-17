@@ -28,10 +28,6 @@ details {
 .header {
   background-color: $bgHeader;
 
-  &__navigation {
-    padding: 0 16px;
-  }
-
   .navigation {
     @include dflex($align: center, $justify: space-between);
 
@@ -49,8 +45,24 @@ details {
       height: 38px;
     }
 
+    &__item {
+      fill: $btnHeader;
+
+      &:hover {
+        fill: $mainColor;
+      }
+    }
+
     &__item:not(:last-child) {
       margin-right: 33px;
+    }
+
+    &__btn {
+      cursor: pointer;
+      position: relative;
+      border: none;
+      outline: none;
+      background-color: transparent;
     }
 
     &__item_cart {
@@ -67,6 +79,79 @@ details {
         text-align: center;
         border-radius: 50%;
       }
+    }
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    overflow-y: auto;
+    top: 75px;
+    right: 0;
+    width: 230px;
+    height: calc(100vh - 75px);
+    background-color: $bgMenu;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    z-index: 2;
+    transition: 1s all;
+
+    &__wrap {
+      position: relative;
+      padding: 34px 37px;
+    }
+
+    &__btn_close {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: $textMenu;
+
+      &:hover {
+        color: $textBlack;
+      }
+    }
+
+    &__title,
+    &__category {
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &__title {
+      font-weight: bold;
+      color: $textBlack;
+      margin-bottom: 24px;
+    }
+
+    &__category {
+      color: $mainColor;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0 0 20px 20px;
+    }
+
+    &__item {
+      cursor: pointer;
+      color: $textMenu;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-bottom: 11px;
+    }
+
+    &__open {
+      display: block;
     }
   }
 }
@@ -188,7 +273,12 @@ details {
   }
 
   &__content {
-    @include dflex($wrap: wrap, $justify: space-between);
+    //@include dflex($wrap: wrap, $justify: space-between);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    justify-items: center;
     margin-bottom: 48px;
   }
 
@@ -303,8 +393,13 @@ details {
         color: $textWhite;
         background: $mainColor;
         border-radius: 0 30px 30px 0;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
 
+      & input:hover,
       & input:focus,
       & button:focus {
         outline: none;
@@ -325,6 +420,118 @@ details {
   }
 }
 
+@media screen and (max-width: 1160px) {
+  .products__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .top__text_bold {
+    font-size: 44px;
+    line-height: 53px;
+  }
+
+  .top__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .top__container {
+    background-position: -150px bottom;
+  }
+  .top__content {
+    margin-right: 3%;
+  }
+
+  .feature__wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature__item {
+    margin: 48px 0;
+  }
+
+  .feature__item:last-child {
+    margin-bottom: 64px;
+  }
+
+  .subscribe__wrap {
+    padding: 64px 0 140px 0;
+  }
+
+  .subscribe__content {
+    min-height: unset;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe__comment {
+    margin-bottom: 48px;
+  }
+
+  .subscribe__form {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top__text_bold {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .top__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .offer__item:not(:last-child) {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .offer__item:last-child {
+    margin-top: 0;
+  }
+
+  .products__content {
+    column-gap: 16px;
+    row-gap: 16px;
+    // grid-template-columns: 1fr;
+  }
+
+  .footer__wrap {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .copyright {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navigation__right a {
+    display: none;
+  }
+
+  .header .navigation__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .top__container {
+    background-image: none;
+    justify-content: center;
+  }
+
+  .products__content {
+    grid-template-columns: 1fr;
+  }
+}
 // catalog page
 
 .navigate {
@@ -337,7 +544,7 @@ details {
   }
 
   &__title {
-    padding: 60px 0;
+    margin: 60px 0;
     font-size: 24px;
     line-height: 29px;
     font-weight: normal;
@@ -347,22 +554,23 @@ details {
 
 .filter {
   &__inner {
-    @include dflex($align: center);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
     padding: 50px 0 60px 0;
   }
 
   &__content {
     height: 40px;
-    width: 360px;
     position: relative;
     @include dflex($align: center);
   }
 
   &__details {
     cursor: pointer;
-    width: 360px;
 
     &[open] {
+      width: 360px;
       position: absolute;
       top: 0;
       background-color: $bgDetails;
@@ -378,7 +586,8 @@ details {
     }
 
     & > summary {
-      display: inline;
+      display: flex;
+      align-items: center;
       font-size: 14px;
       line-height: 17px;
 
@@ -451,8 +660,8 @@ details {
   }
 
   .sorting {
+    justify-self: flex-end;
     list-style-type: none;
-    margin-left: 30px;
     @include dflex;
 
     &__item {
@@ -522,6 +731,65 @@ details {
   }
 }
 
+@media screen and (max-width: 1160px) {
+  .filter__inner {
+    grid-template-columns: min-content 1fr;
+  }
+
+  .filter .sorting {
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filter__inner {
+    grid-template-columns: min-content 1fr;
+  }
+
+  .filter .sorting {
+    justify-self: flex-end;
+  }
+
+  .card_hide {
+    display: none;
+  }
+
+  .products__pagination {
+    margin-bottom: 64px;
+  }
+
+  .filter .sorting__item:not(:last-child) {
+    margin-right: 23px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .filter__details span {
+    display: none;
+  }
+
+  .filter__details > summary svg {
+    width: 35px;
+    height: 25px;
+  }
+
+  .navigate__content {
+    flex-direction: column;
+  }
+
+  .navigate__title {
+    margin: 24px 0 32px 0;
+  }
+
+  .navigate__content nav {
+    margin-bottom: 46px;
+  }
+
+  .filter .sorting__item i {
+    margin: 0 3px;
+  }
+}
+
 // product page
 
 .carousel {
@@ -530,6 +798,11 @@ details {
 
   &__image {
     @include dflex($justify: center);
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__btn {
@@ -571,7 +844,7 @@ details {
 
   &__content {
     padding-bottom: 65px;
-    width: 640px;
+    max-width: 640px;
     border-bottom: 1px solid $borderDesc;
     @include dflex($direction: column, $align: center);
 
@@ -601,7 +874,7 @@ details {
     }
 
     & .description {
-      width: 555px;
+      max-width: 555px;
       font-weight: 300;
       font-size: 14px;
       line-height: 17px;
@@ -676,6 +949,26 @@ details {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .container_hide {
+    padding: 0;
+  }
+
+  .desc__wrap {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .desc .settings__item a {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .products__inner_margin {
+    margin: 64px 0;
+  }
+}
 // cart page
 
 .order {
@@ -731,6 +1024,10 @@ details {
     & .shipping__form {
       width: 360px;
       @include dflex($direction: column);
+    }
+
+    & .shipping__content {
+      min-width: 360px;
     }
 
     & h3 {
@@ -815,6 +1112,7 @@ details {
         margin-top: 17px;
         font-weight: 300;
         font-size: 16px;
+        white-space: nowrap;
         line-height: 19px;
         color: $textWhite;
         background-color: $mainColor;
@@ -826,6 +1124,82 @@ details {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .order__inner {
+    margin: 60px 0 128px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order__shipping {
+    margin-top: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .order__shipping .shipping__form {
+    width: 735px;
+  }
+
+  .shipping__inner {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .order__price {
+    margin: 0 0 0 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order__buttons {
+    justify-content: center;
+  }
+
+  .order__btn:not(:last-child) {
+    margin-right: 48px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .shipping__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order__shipping .shipping__form {
+    width: 360px;
+  }
+
+  .order__products {
+    width: unset;
+    max-width: 650px;
+  }
+
+  .card__form h3 {
+    width: 135px;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 25px;
+  }
+
+  .card__form p,
+  .order__card__price {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .order__btn:not(:last-child) {
+    margin-right: 9px;
+  }
+
+  .order__price {
+    margin-top: 48px;
   }
 }
 

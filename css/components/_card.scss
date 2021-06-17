@@ -4,8 +4,6 @@
   background-color: $bgCard;
 
   &_vertical {
-    margin-bottom: 30px;
-
     &:hover .card__overlay {
       opacity: 1;
     }
@@ -39,8 +37,11 @@
       color: $textWhite;
       transition: 0.3s all;
 
-      & img {
+      & svg {
+        width: 26px;
+        height: 24px;
         margin-right: 12px;
+        fill: $textWhite;
       }
 
       &:hover {
@@ -52,6 +53,10 @@
   &__body {
     margin: 25px 0 20px 16px;
     text-align: start;
+
+    & a:visited {
+      color: $textBlack;
+    }
   }
 
   &__title {
@@ -60,6 +65,11 @@
     line-height: 16px;
     display: block;
     margin-bottom: 12px;
+    transition: 0.3s color;
+
+    &:hover {
+      color: $mainColor;
+    }
   }
 
   &__text {
