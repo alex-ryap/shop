@@ -1,8 +1,12 @@
 //-----COLORS----------------
+
 // main colors
 $mainColor: #f16d7f;
 $textWhite: #ffffff;
 $textBlack: #000000;
+
+// button colors
+$btnHeader: #e8e8e8;
 
 // text colors
 $topTitle: #222222;
@@ -18,13 +22,16 @@ $textDescDescription: $textDetails;
 $textOrderCard: #575757;
 $textOrderPrice: #4a4a4a;
 $textInput: #b1b1b1;
+$textMenu: #6f6e6e;
 
+// border colors
 $borderPagination: #ebebeb;
 $borderBottomDetails: #ebebeb;
 $borderDesc: #eaeaea;
 $borderOrderButton: #a4a4a4;
 $borderOrderInput: $borderOrderButton;
 $borderOrderPrice: #e2e2e2;
+$borderReg: #a4a4a4;
 
 // background colors
 $bgHeader: #222222;
@@ -35,8 +42,10 @@ $bgFooter: $bgHeader;
 $bgNavigate: #f8f3f4;
 $bgOrderPrice: #f5f3f3;
 
+$bgMenu: #ffffff;
 $bgCard: #f8f8f8;
 $bgInput: #e1e1e1;
 $bgDetails: #ffffff;
 $bgCarousel: #f7f7f7;
 $bgDesc: #ffffff;
+$bgRadio: #ffffff;

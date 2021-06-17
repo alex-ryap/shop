@@ -5,4 +5,5 @@ Recomended view on notebook.<br>
 ## Build with:
 
 - HTML,
-- CSS
+- SCSS
+- some JS(only open menu)
