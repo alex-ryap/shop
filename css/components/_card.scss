@@ -2,6 +2,8 @@
   cursor: pointer;
   width: 360px;
   background-color: $bgCard;
+  display: flex;
+  flex-direction: column;
 
   &_vertical {
     &:hover .card__overlay {
@@ -51,12 +53,20 @@
   }
 
   &__body {
-    margin: 25px 0 20px 16px;
-    text-align: start;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 16px 20px 16px;
 
+    & a:focus,
     & a:visited {
       color: $textBlack;
     }
+  }
+
+  &__bottom {
+    margin: 0 0 20px 16px;
   }
 
   &__title {

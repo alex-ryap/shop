@@ -16,8 +16,16 @@
 @import 'components/pagination';
 @import 'components/social_media';
 
+html,
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', sans-serif;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
 }
 
 details {
@@ -162,6 +170,8 @@ details {
   @include dflex;
 
   &__container {
+    max-width: 1160px;
+    width: 100%;
     height: calc(100vh - 75px);
     @include dflex($align: center, $justify: flex-end);
     background-image: url('../img/bgtop.png');
@@ -171,6 +181,7 @@ details {
   }
 
   &__content {
+    max-width: 401px;
     margin-right: 95px;
   }
 
@@ -273,17 +284,16 @@ details {
   }
 
   &__content {
-    //@include dflex($wrap: wrap, $justify: space-between);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
     row-gap: 30px;
     justify-items: center;
-    margin-bottom: 48px;
   }
 
   &__buttons {
     @include dflex($justify: center);
+    margin-top: 48px;
   }
 
   &__btn {
@@ -421,29 +431,22 @@ details {
 }
 
 @media screen and (max-width: 1160px) {
+  .products__wrap {
+    max-width: 768px;
+  }
+
+  .products__inner {
+    margin-bottom: 64px;
+  }
+
   .products__content {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .top__text_bold {
-    font-size: 44px;
-    line-height: 53px;
+    column-gap: 16px;
+    row-gap: 16px;
   }
 
-  .top__title {
-    font-size: 24px;
-    line-height: 29px;
-  }
-}
-
-@media screen and (max-width: 920px) {
-  .top__container {
-    background-position: -150px bottom;
-  }
-  .top__content {
-    margin-right: 3%;
+  .products__buttons {
+    margin-top: 32px;
   }
 
   .feature__wrap {
@@ -478,7 +481,41 @@ details {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .top__text_bold {
+    font-size: 44px;
+    line-height: 53px;
+  }
+
+  .top__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .top__container {
+    background-position: -150px bottom;
+  }
+  .top__content {
+    margin-right: 3%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navigation__right a {
+    display: none;
+  }
+
+  .header .navigation__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .top__container {
+    background-image: none;
+    justify-content: center;
+  }
+
   .top__text_bold {
     font-size: 38px;
     line-height: 46px;
@@ -501,7 +538,7 @@ details {
   .products__content {
     column-gap: 16px;
     row-gap: 16px;
-    // grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .footer__wrap {
@@ -511,25 +548,6 @@ details {
 
   .copyright {
     margin-bottom: 10px;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .navigation__right a {
-    display: none;
-  }
-
-  .header .navigation__item:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .top__container {
-    background-image: none;
-    justify-content: center;
-  }
-
-  .products__content {
-    grid-template-columns: 1fr;
   }
 }
 // catalog page
@@ -739,19 +757,19 @@ details {
   .filter .sorting {
     justify-self: center;
   }
+
+  .card_hide {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .filter__inner {
     grid-template-columns: min-content 1fr;
   }
 
   .filter .sorting {
     justify-self: flex-end;
-  }
-
-  .card_hide {
-    display: none;
   }
 
   .products__pagination {
@@ -761,9 +779,7 @@ details {
   .filter .sorting__item:not(:last-child) {
     margin-right: 23px;
   }
-}
 
-@media screen and (max-width: 750px) {
   .filter__details span {
     display: none;
   }
@@ -781,8 +797,16 @@ details {
     margin: 24px 0 32px 0;
   }
 
+  .navigate__title_alone {
+    margin: 60px 0;
+  }
+
   .navigate__content nav {
     margin-bottom: 46px;
+  }
+
+  .filter .sorting__details > summary {
+    font-size: 13px;
   }
 
   .filter .sorting__item i {
@@ -949,7 +973,12 @@ details {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1160px) {
+  .container_hide {
+  }
+}
+
+@media screen and (max-width: 767px) {
   .container_hide {
     padding: 0;
   }
@@ -957,9 +986,7 @@ details {
   .desc__wrap {
     margin-top: 0;
   }
-}
 
-@media screen and (max-width: 750px) {
   .desc .settings__item a {
     font-size: 10px;
     line-height: 12px;
@@ -969,6 +996,7 @@ details {
     margin: 64px 0;
   }
 }
+
 // cart page
 
 .order {
@@ -1181,6 +1209,10 @@ details {
     max-width: 650px;
   }
 
+  .card__left {
+    height: 188px;
+  }
+
   .card__form h3 {
     width: 135px;
     font-size: 16px;
@@ -1194,12 +1226,33 @@ details {
     line-height: 17px;
   }
 
+  .order__buttons {
+    margin-top: 30px;
+  }
+
+  .order__btn {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 9px 18px;
+  }
+
   .order__btn:not(:last-child) {
     margin-right: 9px;
   }
 
   .order__price {
-    margin-top: 48px;
+    margin: 48px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card__right {
+    padding-top: 14px;
+    padding-left: 17px;
+  }
+
+  .card__form {
+    width: unset;
   }
 }
 
@@ -1216,12 +1269,12 @@ details {
 
   &__form {
     width: 360px;
+    min-width: 360px;
     @include dflex($direction: column);
 
     & .user__data {
       width: 100%;
       @include dflex($direction: column);
-      margin-bottom: 15px;
 
       & h3 {
         font-weight: 300;
@@ -1285,7 +1338,7 @@ details {
     font-size: 13px;
     line-height: 16px;
     color: $textInput;
-    margin-bottom: 44px;
+    margin: 15px 0 44px 0;
   }
 
   &__btn {
@@ -1306,10 +1359,10 @@ details {
   }
 
   &__desc {
-    width: 650px;
+    max-width: 650px;
   }
 
-  &__desc,
+  &__item,
   &__title,
   &__text {
     font-weight: 300;
@@ -1327,22 +1380,52 @@ details {
   }
 
   &__list {
+    margin: 30px;
     @include dflex($direction: column);
-    list-style-position: inside;
     list-style-image: url('../../../img/registration_check.svg');
   }
 
   &__item {
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
-
-    & span {
-      padding-left: 23px;
-    }
+    padding-left: 23px;
   }
 
   &__item:not(:last-child) {
     margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .registration__help {
+    margin-bottom: 39px;
+  }
+
+  .registration__desc {
+    margin-left: 22px;
+  }
+
+  .registration__item,
+  .registration__title,
+  .registration__text {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .registration__title {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .registration__inner {
+    margin-top: 40px;
+  }
+
+  .registration__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registration__desc {
+    margin: 40px 0 0 0;
   }
 }
