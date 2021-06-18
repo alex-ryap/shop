@@ -220,6 +220,7 @@ input[type='radio']:checked + label:after {
   padding: 25px 16px 20px 16px;
 }
 
+.card__body a:focus,
 .card__body a:visited {
   color: #000000;
 }
