@@ -481,6 +481,122 @@ input[type='radio']:checked + label:after {
   margin-right: 8px;
 }
 
+.cart {
+  display: none;
+  width: 400px;
+  position: absolute;
+  top: 60px;
+  right: 150px;
+  background: #f5f3f3;
+  padding: 15px 20px;
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 8px 0px #4a4a4a;
+          box-shadow: 0px 0px 8px 0px #4a4a4a;
+}
+
+.cart--open {
+  display: block;
+}
+
+.cart__empty {
+  font-size: 18px;
+  padding: 10px 0 20px 0;
+  color: #575757;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.cart__title {
+  margin-bottom: 15px;
+  color: #f16d7f;
+}
+
+.cart__list {
+  display: none;
+  list-style-type: none;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.cart__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+  padding-right: 75px;
+}
+
+.cart__total-price span {
+  margin-left: 10px;
+  font-weight: 900;
+}
+
+.cart__btn-delete {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 16px;
+  background: transparent;
+  color: #d4122c;
+}
+
+.cart__bottom {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart__btn-open {
+  cursor: pointer;
+  border: none;
+  font-weight: 300;
+  background: transparent;
+  color: #f16d7f;
+  padding: 10px 15px;
+  border: 1px solid #f16d7f;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+}
+
+.cart__btn-open:hover {
+  color: #ffffff;
+  background: #f16d7f;
+}
+
+.product__img {
+  width: 70px;
+}
+
+.product__name {
+  width: 100px;
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 12px;
+}
+
+.product__counts,
+.product__price,
+.product__total-price {
+  margin-left: 15px;
+}
+
 html,
 body {
   min-height: 100vh;
@@ -550,6 +666,7 @@ details {
 }
 
 .header .navigation__item {
+  cursor: pointer;
   fill: #e8e8e8;
 }
 
