@@ -482,7 +482,7 @@ input[type='radio']:checked + label:after {
 }
 
 .cart {
-  display: none;
+  display: block;
   width: 400px;
   position: absolute;
   top: 60px;
@@ -492,10 +492,6 @@ input[type='radio']:checked + label:after {
   z-index: 1;
   -webkit-box-shadow: 0px 0px 8px 0px #4a4a4a;
           box-shadow: 0px 0px 8px 0px #4a4a4a;
-}
-
-.cart--open {
-  display: block;
 }
 
 .cart__empty {
@@ -511,7 +507,6 @@ input[type='radio']:checked + label:after {
 }
 
 .cart__list {
-  display: none;
   list-style-type: none;
   border-bottom: 1px solid #e2e2e2;
 }
@@ -595,6 +590,7 @@ input[type='radio']:checked + label:after {
 .product__price,
 .product__total-price {
   margin-left: 15px;
+  font-size: 14px;
 }
 
 html,

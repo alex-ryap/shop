@@ -1,5 +1,5 @@
 .cart {
-  display: none;
+  display: block;
   width: 400px;
   position: absolute;
   top: 60px;
@@ -8,10 +8,6 @@
   padding: 15px 20px;
   z-index: 1;
   box-shadow: 0px 0px 8px 0px #4a4a4a;
-
-  &--open {
-    display: block;
-  }
 
   &__empty {
     font-size: 18px;
@@ -26,7 +22,6 @@
   }
 
   &__list {
-    display: none;
     list-style-type: none;
     border-bottom: 1px solid $borderOrderPrice;
   }
@@ -99,4 +94,5 @@
 .product__price,
 .product__total-price {
   margin-left: 15px;
+  font-size: 14px;
 }
