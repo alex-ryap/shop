@@ -43,8 +43,7 @@ Vue.component('cart', {
             }
           });
       } else {
-        item.img = null;
-        const prod = Object.assign({ quantity: 1 }, item);
+        const prod = Object.assign({ quantity: 1, img: null }, item);
         this.$parent.postJson(`${this.cartUrl}`, prod).then((data) => {
           if (data.result === 1) {
             this.cartItems.push(prod);
