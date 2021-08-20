@@ -15,6 +15,7 @@
 @import 'components/breadcrumps';
 @import 'components/pagination';
 @import 'components/social_media';
+@import 'components/cart_mini';
 
 html,
 body {
@@ -54,6 +55,7 @@ details {
     }
 
     &__item {
+      cursor: pointer;
       fill: $btnHeader;
 
       &:hover {
