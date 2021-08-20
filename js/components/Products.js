@@ -1,4 +1,4 @@
-const products = Vue.component('products', {
+Vue.component('products', {
   data() {
     return {
       productsUrl: 'http://127.0.0.1:3000/api/products',
